@@ -10,11 +10,15 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Root route for testing
+app.get('/', (req, res) => {
+    res.send('Server is running');
+});
+
 // Endpoint to handle form submissions
 app.post('/submit-password', (req, res) => {
     const password = req.body.password;
     console.log('Received password:', password);
-    // Here you can process the password (store it in a database, send it via email, etc.)
     res.send('Password received successfully');
 });
 
