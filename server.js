@@ -9,6 +9,11 @@ const PORT = process.env.PORT || 5003; // Use the PORT environment variable if p
 app.use(bodyParser.json());
 app.use(cors());
 
+// Handle root URL
+app.get('/', (req, res) => {
+  res.send('Welcome to the server!');
+});
+
 app.post('/submit-password', (req, res) => {
   const { password } = req.body;
   console.log(`Received password: ${password}`);
