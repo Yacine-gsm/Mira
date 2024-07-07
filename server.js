@@ -21,11 +21,11 @@ app.get('/', (req, res) => {
 app.post('/submit-password', (req, res) => {
     const password = req.body.password;
     console.log('Received password:', password);
-    // Process the password (e.g., store in a database, send via email)
+    // Additional processing logic here
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json({ message: 'Password received successfully' });
-});
-
+  });
+  
 // CORS middleware configuration
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*'); // Replace with specific origin in production
