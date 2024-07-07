@@ -19,7 +19,17 @@ app.get('/', (req, res) => {
 app.post('/submit-password', (req, res) => {
     const password = req.body.password;
     console.log('Received password:', password);
-    res.send('Password received successfully');
+    // Process the password (e.g., store in a database, send via email)
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json({ message: 'Password received successfully' });
+});
+
+// CORS middleware configuration
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Replace with specific origin in production
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    next();
 });
 
 // Start server
