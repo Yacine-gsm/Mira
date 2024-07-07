@@ -6,13 +6,15 @@ const app = express();
 const port = process.env.PORT || 5001;
 
 // Middleware
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
 // Root route for testing
 app.get('/', (req, res) => {
-    res.send('Server is running idiot');
+    res.send('Server is running idiott');
 });
 
 // Endpoint to handle form submissions
