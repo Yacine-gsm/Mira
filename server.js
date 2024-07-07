@@ -14,9 +14,10 @@ app.get('/', (req, res) => {
   res.send('Welcome to the server!');
 });
 
+// Handle POST request to /submit-password
 app.post('/submit-password', (req, res) => {
   const { password } = req.body;
-  console.log(`Received password: ${password}`);
+  console.log(`Received password: ${password}`); // Corrected console.log statement
   res.send('Password received');
 });
 
