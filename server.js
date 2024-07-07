@@ -1,4 +1,4 @@
-*const express = require('express');
+const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Root route for testing
 app.get('/', (req, res) => {
-    res.send('Server is running idiot');
+    res.send('Server is running');
 });
 
 // Endpoint to handle form submissions
